@@ -1,0 +1,10 @@
+<h1><%= @project.title %></h1>
+
+    <hr>
+
+        <div>
+            <%= @project.position%>
+        </div>
+ <%= button_to 'Destroy', project_path(@project), method: :delete%>
+<%= link_to "Edit", edit_project_path(@project)%> 
+<%= link_to 'Cancel', projects_path %>
