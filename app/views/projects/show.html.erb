@@ -1,10 +1,15 @@
+<br>
+<hr>
 <h1><%= @project.title %></h1>
 
     <hr>
-
-        <div>
-            <%= @project.position%>
-        </div>
- <%= button_to 'Destroy', project_path(@project), method: :delete%>
-<%= link_to "Edit", edit_project_path(@project)%> 
-<%= link_to 'Cancel', projects_path %>
+    <div class="card">
+    <div class="card-body">
+        <%= @project.position%>
+    </div>
+    </div>
+ <%= button_to 'Destroy', project_path(@project), method: :delete, class: 'btn btn-primary', data: { confirm: 'Are you sure?' }%>
+<%= link_to "Edit", edit_project_path(@project), class: 'btn btn-primary'%> 
+<%= link_to 'Back', projects_path , class: 'btn btn-primary'%>
+<br>
+<%= link_to "New task", :controller => :tasks, :action => :new, :id => @project.id%>

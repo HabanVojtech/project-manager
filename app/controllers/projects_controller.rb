@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
     def index
-        @projects = current_user.projects.all
+        @pagy, @projects = pagy(current_user.projects.all,items:10) 
     end
 
     def show
@@ -14,8 +14,6 @@ class ProjectsController < ApplicationController
     def create
         @project = Project.create(project_params)
         redirect_to @project
-
-
     end
     
     def edit
