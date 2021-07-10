@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
     def index
-        @pagy, @projects = pagy(current_user.projects.all,items:10)
-        @pagy, @tasks = pagy(current_user.tasks.all,items:2)
+        @pagy, @projects = pagy(current_user.projects.all,items:4)
+        @pagy2, @tasks = pagy(current_user.tasks.all,items:2)
+        @pagy3, @tags = pagy(current_user.tags.all,items:2)
     end
 
     def show

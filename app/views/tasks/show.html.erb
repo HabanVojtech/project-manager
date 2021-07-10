@@ -14,12 +14,12 @@
   <strong>Is done:</strong>
   <%= @task.is_done %>
 </p>
-
+<% unless !@task.file.persisted? %>
 <p>
   <strong>Attachment:</strong>
   <%= link_to 'Download', @task.file, download: ''%>
 </p>
-
+<% end %>
 <p>
   <strong>Project:</strong>
   <%= @task.project_id %>
