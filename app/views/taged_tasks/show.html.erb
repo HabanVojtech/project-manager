@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @taged_task.task_id %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @taged_task.tag_id %>
+</p>
+
+<%= link_to 'Edit', edit_taged_task_path(@taged_task) %> |
+<%= link_to 'Back', taged_tasks_path %>

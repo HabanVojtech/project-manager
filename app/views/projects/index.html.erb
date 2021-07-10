@@ -4,8 +4,24 @@
     <div class="card">
     <div class="card-body">
         <%= link_to project.title, project%>
+        <div class="card">
+            <div class="card-body">
+            <h4>Tasky</h4>
+            <% @tasks.each do |task| %>
+                <% if project.id == task.project_id%>
+                 <%= link_to task.title, task%> <br>
+                <%end%>
+            <%end%>
+            </div>
+    </div>
     </div>
     </div>
 <br>
   <%end%>
 <%= link_to "New Project", new_project_path, class: 'btn btn-primary'%>
+<br>
+<form class="form-inline my-2 my-lg-0 "action="/search">
+    <br>
+    <input class = "form-control mr-sm-2" name="q" type = "text" placeholder="Search" aria-label="Search"> 
+    <button class="btn btn-outline-success my-2 my-sm-0" type ="submit">Search</button-
+</form>

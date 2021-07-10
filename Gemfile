@@ -25,6 +25,7 @@ gem 'devise'
 gem 'pagy', '~> 3.5'
 gem 'paperclip'
 gem 'bootstrap'
+gem 'slim'
 gem 'jquery-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

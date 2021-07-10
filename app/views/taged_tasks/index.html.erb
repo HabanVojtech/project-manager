@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Taged Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Tag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taged_tasks.each do |taged_task| %>
+      <tr>
+        <td><%= taged_task.task_id %></td>
+        <td><%= taged_task.tag_id %></td>
+        <td><%= link_to 'Show', taged_task %></td>
+        <td><%= link_to 'Edit', edit_taged_task_path(taged_task) %></td>
+        <td><%= link_to 'Destroy', taged_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Taged Task', new_taged_task_path %>

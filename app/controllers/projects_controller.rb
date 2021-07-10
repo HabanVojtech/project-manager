@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
     def index
-        @pagy, @projects = pagy(current_user.projects.all,items:10) 
+        @pagy, @projects = pagy(current_user.projects.all,items:10)
+        @pagy, @tasks = pagy(current_user.tasks.all,items:2)
     end
 
     def show
@@ -10,7 +11,12 @@ class ProjectsController < ApplicationController
     def new
         @project = current_user.projects.new(user_id: params[:user_id])
     end
-
+    
+    def search
+        @projects = current_user.projects.where("title LIKE ?","%"+params[:q]+"%")
+        @tasks = current_user.tasks.where("title LIKE ?","%"+params[:q]+"%")
+        @tags = current_user.tags.where("title LIKE ?","%"+params[:q]+"%")
+    end
     def create
         @project = Project.create(project_params)
         redirect_to @project
