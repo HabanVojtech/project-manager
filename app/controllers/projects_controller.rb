@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
     def index
         @pagy, @projects = pagy(current_user.projects.all,items:4)
-        @pagy2, @tasks = pagy(current_user.tasks.all,items:2)
-        @pagy3, @tags = pagy(current_user.tags.all,items:2)
+        @tasks = current_user.tasks.all
+        @tags = current_user.tags.all
     end
 
     def show
@@ -14,9 +14,9 @@ class ProjectsController < ApplicationController
     end
     
     def search
-        @projects = current_user.projects.where("title LIKE ?","%"+params[:q]+"%")
-        @tasks = current_user.tasks.where("title LIKE ?","%"+params[:q]+"%")
-        @tags = current_user.tags.where("title LIKE ?","%"+params[:q]+"%")
+        @projects = current_user.projects.findtitle(params[:q])
+        @tasks = current_user.tasks.findtitle(params[:q])
+        @tags = current_user.tags.findtitle(params[:q])
     end
     def create
         @project = Project.create(project_params)

@@ -27,6 +27,7 @@ gem 'paperclip'
 gem 'bootstrap'
 gem 'slim'
 gem 'jquery-rails'
+gem 'bullet', group: 'development'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

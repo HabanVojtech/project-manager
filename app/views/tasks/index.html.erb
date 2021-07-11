@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Tasks</h1>
+<%== pagy_bootstrap_nav(@pagy)%>
+<h1><%= t(".tasks")%></h1>
 
 <table>
   <thead>
@@ -37,5 +37,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Task', new_task_path ,class: 'btn btn-primary'%>
+<%= link_to 'Hotové tasky', "/tasks?n=true" ,class: 'btn btn-primary'%>
+<%= link_to 'Nedodělané tasky', "/tasks?n=false" ,class: 'btn btn-primary'%>
+<%= link_to 'Všechny tasky', "/tasks?n=all" ,class: 'btn btn-primary'%>

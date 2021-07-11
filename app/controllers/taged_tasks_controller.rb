@@ -1,10 +1,10 @@
 class TagedTasksController < ApplicationController
   def index
-    @taged_tasks = TagedTask.all
+    @pagy,@taged_tasks = pagy(TagedTask.all,items:10)
   end
 
   def show
-    @taged_task = current_user.taged_tasks.find(params[:id])
+    @taged_task = TagedTask.find(params[:id])
   end
 
   def new
@@ -12,7 +12,7 @@ class TagedTasksController < ApplicationController
   end
 
   def edit
-    @taged_task = current_user.taged_tasks.find(params[:id])
+    @taged_task = TagedTask.find(params[:id])
   end
 
   def create
@@ -22,13 +22,13 @@ class TagedTasksController < ApplicationController
   end
 
   def update
-    @taged_task = current_user.taged_tasks.find(params[:id])
+    @taged_task = TagedTask.find(params[:id])
     @taged_task.update(taged_task_params)
     redirect_to "/taged_tasks"
   end
 
   def destroy
-    @taged_task = current_user.taged_tasks.find(params[:id])
+    @taged_task = TagedTask.find(params[:id])
     @taged_task.destroy
     redirect_to "/taged_tasks"
   end

@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
   def index
-    @tags = current_user.tags.all
+    @pagy, @tags = pagy(current_user.tags.all,items:10)
   end
 
   def show

@@ -7,7 +7,6 @@
         <div class="card">
             <div class="card-body">
             <h4>Tasky</h4>
-            <%== pagy_bootstrap_nav(@pagy2)%>
             <% @tasks.each do |task| %>
                 <% if project.id == task.project_id%>
                  <%= link_to task.title, task%> <br>
@@ -17,6 +16,7 @@
             </div>
         </div>
     </div>
+    <%= button_to 'Destroy', project_path(project), method: :delete, class: 'btn btn-primary', data: { confirm: 'Are you sure?' }%>
     </div>
 <br>
   <%end%>

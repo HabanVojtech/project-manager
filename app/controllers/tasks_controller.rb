@@ -1,9 +1,10 @@
 class TasksController < ApplicationController
-
-
- 
     def index
-      @tasks = Task.all
+        if params[:n] == "true" || params[:n] == "false"
+            @pagy, @tasks = pagy(current_user.tasks.done(params[:n]).with_attached_file,items:10)
+        else
+            @pagy, @tasks = pagy(current_user.tasks.all.with_attached_file,items:10)
+        end
     end
 
     def show
