@@ -7,4 +7,5 @@ class Task < ApplicationRecord
     has_many :taged_tasks ,dependent: :destroy
     has_many :tags, through: :taged_tasks
     has_one_attached :file
+    validates :title, presence: true
 end

@@ -1,6 +1,7 @@
 class TagedTasksController < ApplicationController
   def index
-    @pagy,@taged_tasks = pagy(TagedTask.all,items:10)
+    @taged_tasks = TagedTask.all.includes([:task])
+    
   end
 
   def show
@@ -8,11 +9,15 @@ class TagedTasksController < ApplicationController
   end
 
   def new
+    @task_list = Task.where("user_id" => current_user.id)
+     @tag_list = Tag.where("user_id" => current_user.id)
     @taged_task = TagedTask.new
   end
 
   def edit
+    @task_list = Task.where("user_id" => current_user.id)
     @taged_task = TagedTask.find(params[:id])
+    @tag_list = Tag.where("user_id" => current_user.id)
   end
 
   def create

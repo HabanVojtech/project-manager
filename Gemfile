@@ -27,7 +27,7 @@ gem 'paperclip'
 gem 'bootstrap'
 gem 'slim'
 gem 'jquery-rails'
-gem 'bullet', group: 'development'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -62,3 +62,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "simple_form", "~> 5.1"
+group :development, :test do
+  gem 'rspec-rails', ">=3.9.0"
+  gem 'bullet'
+end

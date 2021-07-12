@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%== pagy_bootstrap_nav(@pagy)%>
 <h1>Taged Tasks</h1>
 
 <table>
@@ -14,12 +13,15 @@
   <tbody>
     <% @taged_tasks.each do |taged_task| %>
       <tr>
+        <% if taged_task.task.user_id == current_user.id %>
         <td><%= taged_task.task_id %></td>
         <td><%= taged_task.tag_id %></td>
         <td><%= link_to 'Show', taged_task %></td>
         <td><%= link_to 'Edit', edit_taged_task_path(taged_task) %></td>
         <td><%= link_to 'Destroy', taged_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        </tr>
+        <%end%>
+
     <% end %>
   </tbody>
 </table>

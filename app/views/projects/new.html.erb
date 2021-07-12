@@ -1,23 +1,4 @@
-<%= form_with model: [@user, @project] do |form| %>
-            <%= form.hidden_field :user_id %>
-	<div>
-	    <%= form.label :title %><br>
-            <%= form.text_field :title%>
-            <% @project.errors.full_messages_for(:title).each do |message| %>
-              <div><%= message%></div>
-            <% end %>
-	</div>
-	
-	<div> 
-            <%= form.label :position %> <br>
-            <%= form.text_field :position%>
-            <% @project.errors.full_messages_for(:position).each do |message| %>
-              <div><%= message%></div>
-            <% end %>
-	</div>
+<h1>New projekt</h1>
+<%= render 'form', project: @project %>
 
-        <br>
-	<div>
-            <%= form.submit%>
-	</div>
-<% end %>
+<%= link_to 'Back', projects_path %>

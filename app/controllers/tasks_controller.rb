@@ -27,6 +27,8 @@ class TasksController < ApplicationController
         @task = @project.tasks.create(task_params)
         if @task.save    
         redirect_to @task
+        else
+        render :new
         end
     end
 
