@@ -1,5 +1,4 @@
 cs:
-<<<<<<< HEAD
   global:
     Project_manager: "Správce projektů"
     Projects: "Projekty"
@@ -48,9 +47,4 @@ cs:
     Log_in: "Přihlásit"
     Sign_up: "Registrovat"
     Forgot_password: "Zapomenuté heslo ?"
-=======
-    task:
-        index:
-            tasks: "Úkoly"
->>>>>>> a7a346c7446c3398e8e716e477bb51a50db29083
     

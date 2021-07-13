@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
-<<<<<<< HEAD
 <h1><%= t("global.Tasks/Tags")%></h1>
-=======
-<h1>Taged Tasks</h1>
->>>>>>> a7a346c7446c3398e8e716e477bb51a50db29083
 
 <table>
   <thead>
@@ -18,19 +14,11 @@
     <% @taged_tasks.each do |taged_task| %>
       <tr>
         <% if taged_task.task.user_id == current_user.id %>
-<<<<<<< HEAD
         <td><%= taged_task.task.title %></td>
         <td><%= taged_task.tag.title %></td>
         <td><%= link_to t("global.Show"), taged_task %></td>
         <td><%= link_to t("global.Edit"), edit_taged_task_path(taged_task) %></td>
         <td><%= link_to t("global.Destroy"), taged_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-=======
-        <td><%= taged_task.task_id %></td>
-        <td><%= taged_task.tag_id %></td>
-        <td><%= link_to 'Show', taged_task %></td>
-        <td><%= link_to 'Edit', edit_taged_task_path(taged_task) %></td>
-        <td><%= link_to 'Destroy', taged_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
->>>>>>> a7a346c7446c3398e8e716e477bb51a50db29083
         </tr>
         <%end%>
 

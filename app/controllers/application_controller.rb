@@ -4,17 +4,11 @@ class ApplicationController < ActionController::Base
     before_action :set_locale
     before_action :authenticate_user!
     before_action :configure_permitted_parameters, if: :devise_controller?
-<<<<<<< HEAD
     
     def set_locale
         I18n.locale = :cs
     end
     
-=======
-    def set_locale
-        I18n.locale = :cs
-    end
->>>>>>> a7a346c7446c3398e8e716e477bb51a50db29083
     private
         def after_sign_in_path_for(resource)
             stored_location_for(resource) || projects_path

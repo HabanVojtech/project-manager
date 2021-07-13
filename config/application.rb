@@ -19,11 +19,7 @@ module Rorapp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.available_locales = [:en,:cs]
-<<<<<<< HEAD
     config.i18n.default_locale = :en
-=======
-    config.i18n.locale = :cs
->>>>>>> a7a346c7446c3398e8e716e477bb51a50db29083
     config.i18n.fallbacks = true
   end
 end

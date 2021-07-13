@@ -8,17 +8,10 @@
                 <div class="card">
                 <div class="card-body">
 
-<<<<<<< HEAD
                 <h4><%=t("global.Tasks")%></h4>
                 <% @tasks.each do |task| %>
                     <% if project.id == task.project_id%>
                      <%= link_to task.title, task%> 
-=======
-                <h4>Tasky</h4>
-                <% @tasks.each do |task| %>
-                    <% if project.id == task.project_id%>
-                     <%= link_to task.title, task%> <br>
->>>>>>> a7a346c7446c3398e8e716e477bb51a50db29083
                         <div class="card">
                         <div class="card-body">
                                 <% task.tags.each do |tag| %>
@@ -35,11 +28,7 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
     <%= button_to t("project.Destroy_project"), project_path(project), method: :delete, class: 'btn btn-primary', data: { confirm: 'Are you sure?' }%>
-=======
-    <%= button_to 'Destroy', project_path(project), method: :delete, class: 'btn btn-primary', data: { confirm: 'Are you sure?' }%>
->>>>>>> a7a346c7446c3398e8e716e477bb51a50db29083
     </div>
 <br>
   <%end%>
