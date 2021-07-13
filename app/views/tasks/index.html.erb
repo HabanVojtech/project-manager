@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Tasks</h1>
+<%== pagy_bootstrap_nav(@pagy)%>
+<h1><%= t("global.Tasks")%></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Is done</th>
-      <th>Attachment</th>
-      <th>Project</th>
-      <th>User</th>
+      <th><%=t("task.Title")%></th>
+      <th><%=t("task.Description")%></th>
+      <th><%=t("task.Is_done")%></th>
+      <th><%=t("task.Attachment")%></th>
+      <th><%=t("task.Project")%></th>
+      <th><%=t("task.User")%></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -28,14 +28,15 @@
         <%end%>
         <td><%= task.project_id %></td>
         <td><%= task.user_id %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t("global.Show"), task %></td>
+        <td><%= link_to t("global.Edit"), edit_task_path(task) %></td>
+        <td><%= link_to t("global.Destroy"), task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Task', new_task_path ,class: 'btn btn-primary'%>
+<%= link_to t("task.Done"), "/tasks?n=true" ,class: 'btn btn-primary'%>
+<%= link_to t("task.Unfinished"), "/tasks?n=false" ,class: 'btn btn-primary'%>
+<%= link_to t("task.All"), "/tasks?n=all" ,class: 'btn btn-primary'%>

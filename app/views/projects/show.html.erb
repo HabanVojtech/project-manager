@@ -8,8 +8,8 @@
         <%= @project.position%>
     </div>
     </div>
- <%= button_to 'Destroy', project_path(@project), method: :delete, class: 'btn btn-primary', data: { confirm: 'Are you sure?' }%>
-<%= link_to "Edit", edit_project_path(@project), class: 'btn btn-primary'%> 
-<%= link_to 'Back', projects_path , class: 'btn btn-primary'%>
+ <%= button_to t("global.Destroy"), project_path(@project), method: :delete, class: 'btn btn-primary', data: { confirm: 'Are you sure?' }%>
+<%= link_to t("global.Edit"), edit_project_path(@project), class: 'btn btn-primary'%> 
+<%= link_to t("global.Back"), projects_path , class: 'btn btn-primary'%>
 <br>
-<%= link_to "New task", :controller => :tasks, :action => :new, :id => @project.id%>
+<%= link_to t("global.New_task"), :controller => :tasks, :action => :new, :id => @project.id%>

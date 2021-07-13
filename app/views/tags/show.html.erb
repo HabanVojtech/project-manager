@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%=t("tag.Title")%>:</strong>
   <%= @tag.title %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong><%=t("tag.User")%>:</strong>
   <%= @tag.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Back', tags_path %>
+<%= link_to t("global.Edit"), edit_tag_path(@tag) %> |
+<%= link_to t("global.Back"), tags_path %>
+ <%= button_to t("global.Destroy"), tag_path(@tag), method: :delete, class: 'btn btn-primary', data: { confirm: 'Are you sure?' }%>

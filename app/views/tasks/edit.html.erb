@@ -1,13 +1,11 @@
-<h1>Editing Task</h1>
-
-<%= form_for @task do |form| %>
+<br>
+<%= simple_form_for @task do |form| %>
 
  <%= form.hidden_field :project_id%>
 
  <%= form.hidden_field :user_id ,:value => current_user.id%>
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.input:title %>
   </div>
 
   <div class="field">
@@ -28,9 +26,9 @@
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t("task.Update")%>
   </div>
 <% end %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to t("global.Show"), @task %> |
+<%= link_to t("global.Back"), tasks_path %>

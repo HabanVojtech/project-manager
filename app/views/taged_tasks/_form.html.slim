@@ -1,0 +1,12 @@
+
+= simple_form_for(@taged_task) do |f| 
+  = f.error_notification 
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  div.form-inputs
+    = f.association :task, collection: @task_list
+    = f.association :tag, collection: @tag_list
+
+  div.form-actions
+    = f.button :submit 
+  

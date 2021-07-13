@@ -1,5 +1,5 @@
-<h1>New Tag</h1>
+<h1><%= t("tag.New_tag_title")%></h1>
 
 <%= render 'form', tag: @tag %>
 
-<%= link_to 'Back', tags_path %>
+<%= link_to t("global.Back"), tags_path %>

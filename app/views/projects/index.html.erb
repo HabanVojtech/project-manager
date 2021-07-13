@@ -1,29 +1,41 @@
 <br>
 <%== pagy_bootstrap_nav(@pagy)%>
  <% @projects.each do |project| %>
+
     <div class="card">
     <div class="card-body">
         <%= link_to project.title, project%>
-        <div class="card">
-            <div class="card-body">
-            <h4>Tasky</h4>
-            <%== pagy_bootstrap_nav(@pagy2)%>
-            <% @tasks.each do |task| %>
-                <% if project.id == task.project_id%>
-                 <%= link_to task.title, task%> <br>
+                <div class="card">
+                <div class="card-body">
+
+                <h4><%=t("global.Tasks")%></h4>
+                <% @tasks.each do |task| %>
+                    <% if project.id == task.project_id%>
+                     <%= link_to task.title, task%> 
+                        <div class="card">
+                        <div class="card-body">
+                                <% task.tags.each do |tag| %>
+                                   <%= link_to tag.title, tag%>
+                                <%end%>
+                        </div>
+                        </div>
+                    <%end%>
                 <%end%>
 
-            <%end%>
+
+
+                
             </div>
         </div>
     </div>
+    <%= button_to t("project.Destroy_project"), project_path(project), method: :delete, class: 'btn btn-primary', data: { confirm: 'Are you sure?' }%>
     </div>
 <br>
   <%end%>
-<%= link_to "New Project", new_project_path, class: 'btn btn-primary'%>
+<%= link_to t("project.New_project"), new_project_path, class: 'btn btn-primary'%>
 <br>
 <form class="form-inline my-2 my-lg-0 "action="/search">
     <br>
-    <input class = "form-control mr-sm-2" name="q" type = "text" placeholder="Search" aria-label="Search"> 
-    <button class="btn btn-outline-success my-2 my-sm-0" type ="submit">Search</button-
+    <input class = "form-control mr-sm-2" name="q" type = "text" placeholder=<%=t("project.Search")%> aria-label="Search"> 
+    <button class="btn btn-outline-success my-2 my-sm-0" type ="submit"><%=t("project.Search")%></button-
 </form>

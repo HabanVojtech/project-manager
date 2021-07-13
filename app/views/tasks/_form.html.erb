@@ -1,20 +1,21 @@
-<%= form_for @task, :url => {:action => :create, :id => @project.id,:user_id => current_user.id} do |form| %>
+<%= simple_form_for @task, :url => {:action => :create, :id => @project.id,:user_id => current_user.id} do |form| %>
 
  <%= form.hidden_field :project_id%>
 
  <%= form.hidden_field :user_id ,:value => current_user.id%>
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.input :title %>
+    <% @task.errors.full_messages_for(:title).each do |message| %>
+              <div><%= message%></div>
+    <% end %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.input :description %>
   </div>
 
   <div class="form-group">
-    <%= form.label :is_done %><br>
+    <%= form.label :is_done %>
     <%= form.check_box :is_done %>
   </div>
 
@@ -25,6 +26,6 @@
 
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t("task.New_task")%>
   </div>
 <% end %>

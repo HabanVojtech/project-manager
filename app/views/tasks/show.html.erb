@@ -1,34 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong><%=t("task.Title")%>:</strong>
   <%= @task.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong><%=t("task.Description")%>:</strong>
   <%= @task.description %>
 </p>
 
 <p>
-  <strong>Is done:</strong>
+  <strong><%=t("task.Is_done")%>:</strong>
   <%= @task.is_done %>
 </p>
 <% unless !@task.file.persisted? %>
 <p>
-  <strong>Attachment:</strong>
+  <strong><%=t("task.Attachment")%>:</strong>
   <%= link_to 'Download', @task.file, download: ''%>
 </p>
 <% end %>
 <p>
-  <strong>Project:</strong>
+  <strong><%=t("task.Project")%>:</strong>
   <%= @task.project_id %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong><%=t("task.User")%>:</strong>
   <%= @task.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to t("global.Edit"), edit_task_path(@task) %> |
+<%= link_to t("global.Back"), tasks_path %> 
+ <%= button_to t("global.Destroy"), task_path(@task), method: :delete, class: 'btn btn-primary', data: { confirm: 'Are you sure?' }%>

@@ -3,6 +3,9 @@
 
   <div class="form-inputs">
     <%= f.input :title %>
+    <% @tag.errors.full_messages_for(:title).each do |message| %>
+              <div><%= message%></div>
+    <% end %>
     <%= f.association :user, :as => :hidden, :input_html => { :value => current_user.id } %>
   </div>
 

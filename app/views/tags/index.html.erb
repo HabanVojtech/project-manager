@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Tags</h1>
+<%== pagy_bootstrap_nav(@pagy)%>
+<h1><%= t("global.Tags")%></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>User</th>
+      <th><%= t("tag.Title")%></th>
+      <th><%= t("tag.User")%></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= tag.title %></td>
         <td><%= tag.user_id %></td>
-        <td><%= link_to 'Show', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t("global.Show"), tag %></td>
+        <td><%= link_to t("global.Edit"), edit_tag_path(tag) %></td>
+        <td><%= link_to t("global.Destroy"), tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Tag', new_tag_path %>
+<%= link_to t("tag.New_tag"), new_tag_path,class: 'btn btn-primary' %>

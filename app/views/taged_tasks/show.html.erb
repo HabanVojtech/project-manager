@@ -1,14 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Task:</strong>
+  <strong><%= t("tagedtask.Task") %>:</strong>
   <%= @taged_task.task_id %>
+</p>
+<p>
+  <strong><%= t("tagedtask.Task_name") %>:</strong>
+  <%= @taged_task.task.title %>
 </p>
 
 <p>
   <strong>Tag:</strong>
   <%= @taged_task.tag_id %>
 </p>
+ <p>
+  <strong><%= t("tagedtask.Tag_name") %>:</strong>
+  <%= @taged_task.tag.title %>
+</p>  
 
-<%= link_to 'Edit', edit_taged_task_path(@taged_task) %> |
-<%= link_to 'Back', taged_tasks_path %>
+<%= link_to t("global.Edit"), edit_taged_task_path(@taged_task) %> |
+<%= link_to t("global.Back"), taged_tasks_path %>

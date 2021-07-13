@@ -30,4 +30,51 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  global:
+    Project_manager: "Project manager"
+    Projects: "Projects"
+    Tasks: "Tasks"
+    Tasks/Tags: "Tasks/Tags"
+    Tags: "Tags"
+    Edit_user: "Edit user account"
+    Back: "Back"
+    New_task: "New task"
+    Edit: "Edit"
+    Destroy: "Destroy"
+    Show: "Show"
+    Update: "Update"
+  project:
+    New_project: "New project"
+    New_project_title: "New project"
+    Destroy_project: "Destroy project"
+    Update_project: "Update project"
+    Search: "Search"
+    Search_result: "Search results"
+  task:
+    Title: "Title"
+    Description: "Description"
+    Is_done: "Is done ?"
+    Attachment: "Attachment"
+    Project: "Project"
+    User: "User"
+    Done: "Done"
+    Unfinished: "Unfinished"
+    All: "All"
+    Update: "Update"
+    New_task_title: "New task"
+    New_task: "New task"
+  tag:
+    New_tag: "New tag"
+    Title: "Title"
+    User: "User"
+    New_tag_title: "New tag"
+  tagedtask:
+    Task: "Task"
+    New_taged_task: "New Taged Task"
+    Task_name: "Task name"
+    Tag_name: "Tag name"
+  user:
+    Cancel: "Cancel my account"
+    Log_in: "Log in"
+    Sign_up: "Sign up"
+    Forgot_password: "Forgot your password ?"

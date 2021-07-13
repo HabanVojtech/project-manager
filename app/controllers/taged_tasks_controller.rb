@@ -1,18 +1,23 @@
 class TagedTasksController < ApplicationController
   def index
-    @taged_tasks = TagedTask.all
+    @taged_tasks = TagedTask.all.includes([:task,:tag])
+    
   end
 
   def show
-    @taged_task = current_user.taged_tasks.find(params[:id])
+    @taged_task = TagedTask.find(params[:id])
   end
 
   def new
+    @task_list = Task.where("user_id" => current_user.id)
+     @tag_list = Tag.where("user_id" => current_user.id)
     @taged_task = TagedTask.new
   end
 
   def edit
-    @taged_task = current_user.taged_tasks.find(params[:id])
+    @task_list = Task.where("user_id" => current_user.id)
+    @taged_task = TagedTask.find(params[:id])
+    @tag_list = Tag.where("user_id" => current_user.id)
   end
 
   def create
@@ -22,13 +27,13 @@ class TagedTasksController < ApplicationController
   end
 
   def update
-    @taged_task = current_user.taged_tasks.find(params[:id])
+    @taged_task = TagedTask.find(params[:id])
     @taged_task.update(taged_task_params)
     redirect_to "/taged_tasks"
   end
 
   def destroy
-    @taged_task = current_user.taged_tasks.find(params[:id])
+    @taged_task = TagedTask.find(params[:id])
     @taged_task.destroy
     redirect_to "/taged_tasks"
   end

@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_many :projects, -> {order("position")}, dependent: :destroy
   has_many :tasks, dependent: :destroy
   has_many :tags, dependent: :destroy
+  validates :first_name, presence: true
+  validates :second_name, presence: true
+  validates :password_confirmation, presence: true
 end

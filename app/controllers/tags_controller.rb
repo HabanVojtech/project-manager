@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
   def index
-    @tags = current_user.tags.all
+    @pagy, @tags = pagy(current_user.tags.all,items:10)
   end
 
   def show
@@ -30,6 +30,7 @@ class TagsController < ApplicationController
   def destroy
     @tag = current_user.tags.find(params[:id]) 
     @tag.destroy
+    redirect_to "/tags"
   end
 
   private

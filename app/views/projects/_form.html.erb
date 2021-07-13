@@ -1,16 +1,14 @@
-<%= form_with model: [@user, @project] do |form| %>
+<%= simple_form_for @project do |form| %>
             <%= form.hidden_field :user_id %>
 	<div>
-	    <%= form.label :title %><br>
-            <%= form.text_field :title%>
+            <%= form.input :title%>
             <% @project.errors.full_messages_for(:title).each do |message| %>
               <div><%= message%></div>
             <% end %>
 	</div>
 	
 	<div> 
-            <%= form.label :position %> <br>
-            <%= form.text_field :position%>
+            <%= form.input:position%>
             <% @project.errors.full_messages_for(:position).each do |message| %>
               <div><%= message%></div>
             <% end %>
@@ -18,6 +16,6 @@
 
         <br>
 	<div>
-            <%= form.submit t("project.Update_project")%>
+            <%= form.submit t("project.New_project")%>
 	</div>
 <% end %>
