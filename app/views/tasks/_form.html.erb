@@ -4,7 +4,12 @@
 
  <%= form.hidden_field :user_id ,:value => current_user.id%>
   <div class="field">
+<<<<<<< HEAD
     <%= form.input :title %>
+=======
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+>>>>>>> a7a346c7446c3398e8e716e477bb51a50db29083
     <% @task.errors.full_messages_for(:title).each do |message| %>
               <div><%= message%></div>
     <% end %>

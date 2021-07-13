@@ -1,6 +1,10 @@
 class TagedTasksController < ApplicationController
   def index
+<<<<<<< HEAD
     @taged_tasks = TagedTask.all.includes([:task,:tag])
+=======
+    @taged_tasks = TagedTask.all.includes([:task])
+>>>>>>> a7a346c7446c3398e8e716e477bb51a50db29083
     
   end
 
